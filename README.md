@@ -140,7 +140,44 @@ Future extensions may include:
 This design choice establishes a strong foundation for intelligent beamforming research while revealing promising pathways for future improvements.
 
 ---
+🔽 Model Download (GitHub Releases)
 
+The trained deep-learning model used in this project is available for download in the GitHub Releases section.
+
+👉 Download the Trained Model:
+
+trainedBeamformingNet.mat
+(Available under the repository’s Releases tab)
+
+This .mat file contains:
+
+The fully trained ResNet-50 regression model
+
+All learned weights & biases
+
+Ready-to-use inference network (netTransfer)
+
+✔ How to load the model in MATLAB:
+
+S = load('trainedBeamformingNet.mat');
+
+net = S.netTransfer;
+
+✔ How to run inference after loading:
+
+img = imread('your_input_image.png');
+
+img = imresize(img, [224 224]);
+
+y = predict(net, img);
+
+🔎 Notes
+
+No additional dependencies are needed other than MATLAB Deep Learning Toolbox.
+
+This is the same model used in Steps 4 and 5 of the pipeline.
+
+The .mat file in Releases is recommended because GitHub restricts large files in the main repo.
 ## 🚀 How to Run
 
 ### **1. Generate dataset**
