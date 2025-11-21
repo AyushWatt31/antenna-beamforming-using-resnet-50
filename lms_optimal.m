@@ -29,10 +29,7 @@ Rdl = R + epsLoad*eye(numElements);              % loaded covariance
 w_mvdr = (Rdl \ sv0) / (sv0' / Rdl * sv0);       % MVDR solution
 w_mvdr = w_mvdr(:) / (norm(w_mvdr) + 1e-12);
 
-%% 4) Choose reference "optimal" (here MVDR)
-w_optimal = w_mvdr;
-
-%% 5) LMS weights (stable step and normalization)
+%% 4) LMS weights (stable step and normalization)
 mu = 0.05 / (norm(H,'fro')^2/numRows + eps);     % normalized step
 dvec = ones(numRows,1);                           % desired response
 w_lms = zeros(numElements,1);
@@ -43,6 +40,9 @@ for t = 1:numRows
     w_lms = w_lms + mu * conj(e) * x;
 end
 w_lms = w_lms(:) / (norm(w_lms) + 1e-12);
+
+%% 5) Choose reference "optimal" (here LMS)
+w_optimal = w_lms;
 
 %% 6) Build CNN input image from complex H (REAL ONLY!)
 % Use magnitude-only grayscale; no mat2gray on complex arrays.
