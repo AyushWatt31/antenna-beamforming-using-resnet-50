@@ -99,7 +99,7 @@ The ImageNet ResNet‑50 is modified by:
 - Comparison with MVDR, LMS, RLS  
 
 <img width="742" height="387" alt="mvdr_optimal_parameters" src="https://github.com/user-attachments/assets/c733d061-0645-4891-8873-8ea716c293e0" />
-<img width="726" height="367" alt="lms_optimal_parameters" src="https://github.com/user-attachments/assets/d297bf7a-d3fe-4f7c-91ea-9562c5147b5a" />
+<img width="740" height="345" alt="lms_optimal_parameters" src="https://github.com/user-attachments/assets/3f639cf7-09c1-4da3-b416-1a6f78933772" />
 <img width="732" height="257" alt="rls_optimal_parameters" src="https://github.com/user-attachments/assets/5ca1a86b-bda0-4cf7-b5c5-892f193c3e2d" />
 `![Evaluation](results/evaluation_plots/placeholder.png)`
 
